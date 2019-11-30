@@ -1,0 +1,26 @@
+{
+  "name": "FS1020FinalProject",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon --inspect src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msarandi/FS1020FinalProject.git"
+  },
+  "author": "Marie Sarandi <mariesarandi@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/msarandi/FS1020FinalProject/issues"
+  },
+  "homepage": "https://github.com/msarandi/FS1020FinalProject#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.1",
+    "npm": "^6.13.1",
+    "start": "^5.1.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
