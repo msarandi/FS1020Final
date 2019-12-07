@@ -24,3 +24,7 @@ app.post ('/user/:id', function (request, response) {
 });
 
 
+app.get ('/submissions', function (request, response) {
+  response.send ('All Submissions');
+
+});
