@@ -12,3 +12,15 @@ app.listen(port, function () {
 app.get('/', function(request, response) {
   response.send('Hello, World!');
 });
+
+
+
+app.post ('/', function (request, response) {
+  response.send('Create Submission');
+});
+
+app.post ('/user/:id', function (request, response) {
+  response.send(request.paramms.id);
+});
+
+
