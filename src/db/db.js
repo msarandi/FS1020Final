@@ -7,23 +7,30 @@ let path = require('path');
 let readFile = util.promisify(fs.readFile);
 let writeFile = util.promisify(fs.writeFile);
 
+
+
 let dbPath = path.resolve('src/db/db.json');
+
+
 
 /**
  * Read the contents of db.json
  */
 
-async function read() {
-  let fileContents = await readFile(dbPath);
-  return JSON.parse(fileContents);
+ async function read() {
+   let fileContents = await readFile(dbPath);
+   let dbInfo = JSON.parse(fileContents);
+  return dbInfo;
 }
+
+
 
 
  /**
  * Write the contents of db.json, replacing the entire file
  */
-async function write (dbUser) {
-  let json = JSON.stringify (dbUser);
+async function write (dbInfo) {
+  let json = JSON.stringify (dbInfo, null, 2);
   await writeFile (dbPath, json);
 }
 
@@ -33,7 +40,7 @@ async function write (dbUser) {
 
 
  async function addUser(user) {
-   let dbUser = await read ();
+   const dbUser = await read ();
    dbUser.push(user);
    await write (dbUser);
  }

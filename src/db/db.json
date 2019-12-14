@@ -1,10 +1,17 @@
 [
-	{
-		"Username": "Bluedot",
-		"Password": "Green321"
-	},
-	{
-		"Username": "Reddot",
-		"Password": "Yellow321"
-	}
+  {
+    "Name": "Jimmy",
+    "Email": "Jimmy@dot.com",
+    "Phone Number": "123-456-7890"
+  },
+  {
+    "Name": "Kyle",
+    "Email": "Kyle@dot.com",
+    "Phone Number": "987-654-3210"
+  },
+  {
+    "Name": "Freddy",
+    "Email": "Fred@dot.com",
+    "Phone Number": "112-134-1234"
+  }
 ]

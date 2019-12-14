@@ -1,6 +1,8 @@
 'use strict';
 
 let express = require('express');
+let path = require('path');
+
 let router = require ('./router');
 let db = require ('./db/db.js');
 
@@ -24,19 +26,19 @@ app.get('/', function(request, response) {
 
 
 app.post ('/entry', function (request, response) {
-  response.send('Hello World!');
+  response.send('Thank you!');
 });
 
-app.post ('/register/user', function (request, response) {
-  response.send('New User');
+app.post ('/register/user', async function (request, response) {
+  response.json(await db.addUser());
 });
 
 
 app.post ('/register/session', function (request, response) {
-  response.send('New Session');
+  response.send('Log In');
 });
 
-app.get ('/register/all', function (request, response) {
-  response.send ('All Submissions');
+app.get ('/all contacts', async function (request, response) {
+  response.json(await db.read());
 
 });
