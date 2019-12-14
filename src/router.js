@@ -22,14 +22,14 @@ function validateUserMiddleware (request, response, next) {
   }
 }
 
-router.post('/register/user/new', async function (request, response) {
+router.post('/register/user/new', validateUserMiddleware, async function (request, response, next) {
 
 
 // Add user to DB and send status code
 
-db.addUser(req.body).then(function() {
+await db.addUser(req.body);
   res.sendStatus(201);
-});
+next();
 });
 
 

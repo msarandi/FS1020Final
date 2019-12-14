@@ -2,6 +2,7 @@
 
 let express = require('express');
 let router = require ('./router');
+let db = require ('./db/db.js');
 
 let app = express();
 let port = 3000;
@@ -22,16 +23,16 @@ app.get('/', function(request, response) {
 
 
 
-app.post ('/entry/new', function (request, response) {
+app.post ('/entry', function (request, response) {
   response.send('Hello World!');
 });
 
-app.post ('/register/user/new', function (request, response) {
+app.post ('/register/user', function (request, response) {
   response.send('New User');
 });
 
 
-app.post ('/register/session/new', function (request, response) {
+app.post ('/register/session', function (request, response) {
   response.send('New Session');
 });
 

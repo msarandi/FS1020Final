@@ -15,7 +15,7 @@ let dbPath = path.resolve('src/db/db.json');
 
 async function read() {
   let fileContents = await readFile(dbPath);
-  return JSON.parse(json);
+  return JSON.parse(fileContents);
 }
 
 
@@ -38,7 +38,10 @@ async function write (dbUser) {
    await write (dbUser);
  }
 
- // Export the read and addItem functions, but not `write` as that's internal
+
 module.exports = {
   addUser: addUser,
+  read: read,
 };
+
+
