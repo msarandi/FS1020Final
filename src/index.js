@@ -38,7 +38,7 @@ app.post ('/register/session', function (request, response) {
   response.send('Log In');
 });
 
-app.get ('/all contacts', async function (request, response) {
+app.get ('/allcontacts', async function (request, response) {
   response.json(await db.read());
 
 });

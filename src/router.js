@@ -11,25 +11,30 @@ let router = express.Router();
 
 // Routes go under here
 
-function validateUserMiddleware (request, response, next) {
-  let user = req.body;
+function validateUserMiddleware(request, response, next) {
+  let user = request.body;
   if (!user.name) {
-    res.status(400).send('"Username" is a required field');
-  } else if (!user.pass) {
-    res.status(400).send('"Password" is a required field');
+    response.status(400).send('"name" is a required field');
+  } else if (!user.email) {
+    response.status(400).send('"email" is a required field');
   } else {
     next();
   }
 }
 
-router.post('/register/user/new', validateUserMiddleware, async function (request, response, next) {
+router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
 
 
 // Add user to DB and send status code
-
+try {
+  JSON.parse('{a:1}');
 await db.addUser(req.body);
   res.sendStatus(201);
 next();
+} catch (error) {
+  next(error);
+}
+
 });
 
 

@@ -39,10 +39,12 @@ async function write (dbInfo) {
  */
 
 
- async function addUser(user) {
-   const dbUser = await read ();
-   dbUser.push(user);
-   await write (dbUser);
+ async function addUser(newUser) {
+   let dbUser = await read ();
+
+
+   dbUser.push(newUser);
+  await write(dbUser);
  }
 
 
