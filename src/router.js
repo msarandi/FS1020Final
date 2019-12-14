@@ -1,11 +1,18 @@
 'use strict';
 
 let express = require('express');
-let db = require('./db');
+
+
+let db = require('./db/db');
+
+
 
 let router = express.Router();
 
 // Routes go under here
+
+
+
 
 // Add car to DB and send status code
 

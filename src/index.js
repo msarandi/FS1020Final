@@ -21,18 +21,21 @@ app.get('/', function(request, response) {
 
 
 
-app.post ('/', function (request, response) {
+
+app.post ('/entry/new', function (request, response) {
   response.send('Hello World!');
 });
 
-app.post ('/user/:id', function (request, response) {
-  response.send(request.params.id);
+app.post ('/register/user/new', function (request, response) {
+  response.send('New User');
 });
 
 
-app.get ('/submissions', function (request, response) {
+app.post ('/register/session/new', function (request, response) {
+  response.send('New Session');
+});
+
+app.get ('/register/all', function (request, response) {
   response.send ('All Submissions');
 
 });
-
-
