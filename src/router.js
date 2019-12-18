@@ -17,24 +17,27 @@ function validateUserMiddleware(request, response, next) {
     response.status(400).send('"name" is a required field');
   } else if (!user.email) {
     response.status(400).send('"email" is a required field');
-  } else {
+  } else if (!user.number) {
+    response.status(400).send('"number" is a required field"')
+  }
+  else {
     next();
   }
 }
 
-router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
 
 
 // Add user to DB and send status code
+router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
+
 try {
-  JSON.parse('{a:1}');
-await db.addUser(req.body);
-  res.sendStatus(201);
-next();
+  JSON.parse('{"a": "1", "b":"2"}');
+await db.addUser(request.body);
+  response.sendStatus(201);
+ next();
 } catch (error) {
   next(error);
 }
-
 });
 
 

@@ -13,6 +13,23 @@
     "Name": "Freddy",
     "Email": "Fred@dot.com",
     "Phone Number": "112-134-1234"
-	}
-
+  },
+  {
+    "name": "Angela",
+    "email": "Angela@yahoo.com",
+    "number": "987-432-1234"
+  },
+  null,
+  {
+    "name": "Bob",
+    "email": "Bob@Burgers.com",
+    "number": "987-432-1234"
+  },
+  null,
+  {
+    "name": "Michael",
+    "email": "Michael@email.com",
+    "number": "987-432-1234"
+  },
+  null
 ]
