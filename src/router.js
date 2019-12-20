@@ -1,7 +1,7 @@
 'use strict';
 
 let express = require('express');
-
+let secretsRoutes = require('./secrets');
 
 let db = require('./db/db');
 
@@ -31,7 +31,7 @@ function validateUserMiddleware(request, response, next) {
 router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
 
 try {
-  JSON.parse('{"a": "1", "b":"2"}');
+  JSON.parse('{"a": "1", "b":"2", "c":"3"}');
 await db.addUser(request.body);
   response.sendStatus(201);
  next();
@@ -39,6 +39,8 @@ await db.addUser(request.body);
   next(error);
 }
 });
+
+router.get('/secrets', secretsRoutes.get);
 
 
 
