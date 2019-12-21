@@ -13,6 +13,9 @@ let session = require ('express-session');
 let port = 3000;
 
 let defaultSessionValues = require('./default-session-values');
+
+require('dotenv').config()
+
 app.use(express.json());
 app.use(router);
 
@@ -60,3 +63,4 @@ app.use(session({
 }));
 
 app.use(defaultSessionValues);
+
