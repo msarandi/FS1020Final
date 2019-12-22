@@ -18,6 +18,8 @@ app.post ('/register/user', async function (request, response) {
   response.json(await db.addUser());
 });
 
+app.use(express.urlencoded({ extended: false }));
+
 //Route to log a registered user in to create a session
 app.post ('/register/session', function (request, response) {
   response.send('Log In');
