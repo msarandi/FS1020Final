@@ -43,5 +43,10 @@
     "email": "Michael@email.com",
     "number": "987-432-1234"
   },
-  null
+  null,
+  {
+    "name": "Michael",
+    "email": "Michael@email.com",
+    "number": "987-432-1234"
+  }
 ]
