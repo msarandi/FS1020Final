@@ -6,23 +6,24 @@ let db = require('./db/db');
 let router = express.Router();
 let authentication = require('./authentication');
 
-// Routes go under here
+// Routes
 
-
-
+// Create an entry when the user submits their form
 app.post ('/entry', function (request, response) {
   response.send('Thank you!');
 });
 
+// Create or register a user
 app.post ('/register/user', async function (request, response) {
   response.json(await db.addUser());
 });
 
-
+//Route to log a registered user in to create a session
 app.post ('/register/session', function (request, response) {
   response.send('Log In');
 });
 
+//Route to get a listing of all submissions
 app.get ('/allcontacts', async function (request, response) {
   response.json(await db.read());
 
