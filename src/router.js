@@ -29,7 +29,7 @@ app.get ('/allcontacts', async function (request, response) {
 
 });
 
-
+//Info required to create user
 function validateUserMiddleware(request, response, next) {
   let user = request.body;
   if (!user.name) {
@@ -85,8 +85,6 @@ function postLoginRoute(req, res) {
       });
   }
 }
-
-
 
 
 module.exports = {
