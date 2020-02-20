@@ -3,7 +3,7 @@
 let express = require('express');
 let path = require('path');
 
-let router = require ('./router');
+let router = require ('./router.js');
 let db = require ('./db/db.js');
 
 
@@ -30,6 +30,9 @@ app.use(session({
 
 app.use(router);
 app.use(defaultSessionValues);
+
+
+app.use('/src', express.static(path.join(__dirname, 'public')))
 
 
 app.listen(port, function () {

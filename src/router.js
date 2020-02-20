@@ -50,6 +50,7 @@ function validateUserMiddleware(request, response, next) {
 
 
 // Add user to DB and send status code
+
 router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
 
 try {
@@ -63,8 +64,8 @@ await db.addUser(request.body);
 });
 
 
-app.use(authentication);
-app.get('/allcontacts', authentication, async function (request, response) {
+router.use(authentication);
+router.get('/allcontacts', authentication, async function (request, response) {
   response.json(await db.read());
 });
 
@@ -89,7 +90,7 @@ function postLoginRoute(req, res) {
   }
 }
 
-app.use(express.static('/', path.resolve('public')));
+
 
 
 module.exports = {
