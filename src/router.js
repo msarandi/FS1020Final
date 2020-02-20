@@ -5,11 +5,12 @@ let app = express();
 let db = require('./db/db');
 let router = express.Router();
 let authentication = require('./authentication');
+let path = require ('path');
 
 // Routes
 
 // Create an entry when the user submits their form
-app.post ('/entry', function (request, response) {
+app.get ('/entry', function (request, response) {
   response.send('Thank you!');
 });
 
@@ -87,6 +88,8 @@ function postLoginRoute(req, res) {
       });
   }
 }
+
+app.use(express.static('/', path.resolve('public')));
 
 
 module.exports = {

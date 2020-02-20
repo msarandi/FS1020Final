@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Marie Sarandi</title>
+
+
+    <style>
+
+         /* Links */
+        ul {
+            font-family: 'Open Sans', sans-serif;
+            list-style-type: none;
+            margin-left: 900px;
+            margin-top: 0px;
+            padding: 0;
+            overflow: hidden;
+            background-color: no fill;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            font-size: 16px;
+        }
+
+        li {
+            float: left;
+
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            
+            text-decoration: line-through;
+            text-transform: lowercase;
+            font-size: 18px;
+            cursor: default;
+        }
+
+        a:hover{
+            opacity: 0.7;
+            cursor: default;
+            transition: 0.8s;
+        }
+
+        .active {
+            background-color: white;
+            text-decoration: underline;
+            font-size: 18px;
+        }
+
+ /* Name Header */
+        .header {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 60px;
+            letter-spacing: 15px;
+            color: black;
+            position: fixed;
+            top: 50px;
+            left: 700px;
+
+
+        }
+
+
+ /* Body */
+        .main {
+            position: fixed;
+            top: 130px;
+            left: 425px;
+            padding: 125px 100px 100px 150px;
+            max-width: 600px;
+            border: 1px solid black;
+            height: 220px;
+            width: 600px;
+            font-family: 'Open Sans', sans-serif;
+            text-align: left;
+            overflow: auto;
+        }
+ /* Body Animation */
+        .main li a {
+            display: block;
+            color: black;
+            text-decoration: underline;
+        }
+        a:link {
+  color: black;
+}
+
+        a:visited {
+  color: black;
+}
+
+
+        div.slide-left {
+            width: 15%;
+            overflow: hidden;
+            margin-left: 140px;
+        }
+
+        div.slide-left p {
+            animation: slide-left 3s;
+        }
+
+        @keyframes slide-left {
+            from {
+                margin-left: 100%;
+                width: 300%;
+
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        p {
+            font-size: 60px;
+            letter-spacing: -8px;
+            font-family: 'Open Sans', sans-serif;
+            font-style: lowercase;
+        }
+
+
+        .profile {
+
+            margin-left: 50px;
+            width: 200px;
+        }
+
+        /* Avatar */
+
+        .avatar {
+            border-radius: 50%;
+            height: 225px;
+            width: 225px;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <ul> <li><a href="aboutme.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="header">
+        marie sarandi
+    </div>
+
+
+    <div class="slide-left">
+        <p>works.</p>
+    </div>
+
+    <div class="profile">
+
+        <img class="avatar" src="prof.JPG" alt="Avatar">
+
+    </div>
+
+    <div class="main">
+
+        Check out my latest design: <br>
+         <a href="gallery-new.html" target="_blank"><img src="screenshot.jpg" width="250" height="150"></a><br><br>
+        A photogallery based on a vacation rental property concept. <br>
+        HTML, CSS, and Javascript were incorporated. This is just the beginning! &#x263A
+    </div>
+
+
+</body>
+
+</html>
