@@ -8,6 +8,11 @@ let authentication = require('./authentication');
 let path = require ('path');
 
 // Routes
+router.post('/contact', validateContactSubmissions,function(request, response, next) {
+  let contact = request.body;
+  db.addContact({...contact});
+  response.status(201).send(contact);
+})
 
 // Create an entry when the user submits their form
 app.get ('/entry', function (request, response) {
@@ -91,7 +96,29 @@ function postLoginRoute(req, res) {
 }
 
 
+function validateContactSubmissions(request, response, next) {
+  let contact = request.body;
+  let errors = [];
+  if (!contact.firstName) {
+    errors.push('firstName');
+  }
 
+  if (!contact.lastName) {
+    errors.push('lastName')
+  }
+
+  if (!contact.email) {
+    errors.push('email');
+  }
+
+  if (errors.length > 0) {
+    return response.status(400).send({
+      "message": "fields not found",
+      "fields" : errors
+    })
+  }
+  next();
+}
 
 module.exports = {
   post: postLoginRoute,
