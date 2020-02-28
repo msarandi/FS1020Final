@@ -4,11 +4,12 @@ let express = require('express');
 let app = express();
 let db = require('./db/db');
 let router = express.Router();
-let authentication = require('./authentication');
+let cors = require('cors');
+/*let authentication = require('./authentication');*/
 let path = require ('path');
 
 // Routes
-router.post('/contact', validateContactSubmissions,function(request, response, next) {
+router.post('/contact.html', cors(), validateContactSubmissions,function(request, response, next) {
   let contact = request.body;
   db.addContact({...contact});
   response.status(201).send(contact);
@@ -69,10 +70,10 @@ await db.addUser(request.body);
 });
 
 
-router.use(authentication);
+/*router.use(authentication);
 router.get('/allcontacts', authentication, async function (request, response) {
   response.json(await db.read());
-});
+});*/
 
 
 function postLoginRoute(req, res) {

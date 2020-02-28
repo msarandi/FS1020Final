@@ -9,7 +9,7 @@ let db = require ('./db/db.js');
 
 let app = express();
 let session = require ('express-session');
-let port = 3000;
+let port = 7000;
 
 let defaultSessionValues = require('./default-session-values');
 
