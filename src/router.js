@@ -8,16 +8,19 @@ let cors = require('cors');
 /*let authentication = require('./authentication');*/
 let path = require ('path');
 
+
 // Routes
-router.post('/contact.html', cors(), validateContactSubmissions,function(request, response, next) {
+router.post('/contact.html', cors(),validateContactSubmissions,function(request, response, next) {
   let contact = request.body;
   db.addContact({...contact});
   response.status(201).send(contact);
 })
 
+
+
 // Create an entry when the user submits their form
-app.get ('/entry', function (request, response) {
-  response.send('Thank you!');
+app.get ('/contact.html', function (request, response) {
+  response.send('it works');
 });
 
 // Create or register a user
@@ -25,7 +28,7 @@ app.post ('/register/user', async function (request, response) {
   response.json(await db.addUser());
 });
 
-app.use(express.urlencoded({ extended: false }));
+/* app.use(express.urlencoded({ extended: false }));*/
 
 //Route to log a registered user in to create a session
 app.post ('/register/session', function (request, response) {
@@ -57,7 +60,7 @@ function validateUserMiddleware(request, response, next) {
 
 // Add user to DB and send status code
 
-router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
+/*router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
 
 try {
   JSON.parse('{"a": "1", "b":"2", "c":"3"}');
@@ -67,7 +70,7 @@ await db.addUser(request.body);
 } catch (error) {
   next(error);
 }
-});
+});*/
 
 
 /*router.use(authentication);
@@ -76,7 +79,7 @@ router.get('/allcontacts', authentication, async function (request, response) {
 });*/
 
 
-function postLoginRoute(req, res) {
+/*function postLoginRoute(req, res) {
   if (req.body.username === 'fs1020' && req.body.password === 'P@ssw0rd') {
     req.session.username = req.body.username;
     res.redirect('/');
@@ -94,7 +97,7 @@ function postLoginRoute(req, res) {
         },
       });
   }
-}
+}*/
 
 
 function validateContactSubmissions(request, response, next) {
@@ -121,9 +124,9 @@ function validateContactSubmissions(request, response, next) {
   next();
 }
 
-module.exports = {
+/*module.exports = {
   post: postLoginRoute,
-};
+};*/
 
 
 module.exports = router;
