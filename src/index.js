@@ -9,15 +9,16 @@ let db = require ('./db/db.js');
 
 let app = express();
 let session = require ('express-session');
-let port = 7000;
+let port = 8001;
 
-let defaultSessionValues = require('./default-session-values');
+/*let defaultSessionValues = require('./default-session-values');*/
 
 require('dotenv').config()
 
 app.use(express.json());
 
-app.use(session({
+
+/*app.use(session({
   secret: 'anything',
   resave: false,
   saveUninitialized: true,
@@ -25,11 +26,11 @@ app.use(session({
     httpOnly: true,
     maxAge: 12000000,
   },
-}));
+}));*/
 
 
 app.use(router);
-app.use(defaultSessionValues);
+/*app.use(defaultSessionValues);*/
 
 
 app.use('/src', express.static(path.join(__dirname, 'public')))

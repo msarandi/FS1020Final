@@ -4,13 +4,16 @@ let express = require('express');
 let app = express();
 let db = require('./db/db');
 let router = express.Router();
-let cors = require('cors');
+let cors = require('cors')
 /*let authentication = require('./authentication');*/
 let path = require ('path');
 
 
 // Routes
-router.post('/contact.html', cors(),validateContactSubmissions,function(request, response, next) {
+
+router.use(cors())
+
+router.post('/contact.html',validateContactSubmissions,function(request, response, next) {
   let contact = request.body;
   db.addContact({...contact});
   response.status(201).send(contact);
@@ -19,7 +22,7 @@ router.post('/contact.html', cors(),validateContactSubmissions,function(request,
 
 
 // Create an entry when the user submits their form
-app.get ('/contact.html', function (request, response) {
+app.get ('/contact.html', cors(), function (request, response) {
   response.send('it works');
 });
 
