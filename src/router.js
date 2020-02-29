@@ -5,7 +5,6 @@ let app = express();
 let db = require('./db/db');
 let router = express.Router();
 let cors = require('cors')
-/*let authentication = require('./authentication');*/
 let path = require ('path');
 
 
@@ -31,7 +30,6 @@ app.post ('/register/user', async function (request, response) {
   response.json(await db.addUser());
 });
 
-/* app.use(express.urlencoded({ extended: false }));*/
 
 //Route to log a registered user in to create a session
 app.post ('/register/session', function (request, response) {
@@ -63,44 +61,10 @@ function validateUserMiddleware(request, response, next) {
 
 // Add user to DB and send status code
 
-/*router.post('/register/user', validateUserMiddleware, async function (request, response, next) {
-
-try {
-  JSON.parse('{"a": "1", "b":"2", "c":"3"}');
-await db.addUser(request.body);
-  response.sendStatus(201);
- next();
-} catch (error) {
-  next(error);
-}
-});*/
 
 
-/*router.use(authentication);
-router.get('/allcontacts', authentication, async function (request, response) {
-  response.json(await db.read());
-});*/
 
 
-/*function postLoginRoute(req, res) {
-  if (req.body.username === 'fs1020' && req.body.password === 'P@ssw0rd') {
-    req.session.username = req.body.username;
-    res.redirect('/');
-  } else {
-    res
-      .status(401)
-      .render('login', {
-        pageId: 'login',
-        title: 'Login',
-        username: req.session.username,
-        formError: 'Authentication failed.',
-        formValues: {
-          username: req.body.username || null,
-          password: req.body.password || null,
-        },
-      });
-  }
-}*/
 
 
 function validateContactSubmissions(request, response, next) {

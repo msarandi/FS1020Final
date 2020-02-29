@@ -3,13 +3,8 @@
 let util = require('util');
 let fs = require('fs');
 let path = require('path');
-
 let readFile = util.promisify(fs.readFile);
 let writeFile = util.promisify(fs.writeFile);
-
-
-
-let dbPath = path.resolve('src/db/db.json');
 let contactPath = path.resolve('src/db/contacts.json');
 
 

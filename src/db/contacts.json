@@ -48,5 +48,10 @@
     "firstName": "Marie",
     "lastName": "Sarandi",
     "email": "marie@gmail.com"
+  },
+  {
+    "firstName": "Marie",
+    "lastName": "Sarandi",
+    "email": "marie@mail.com"
   }
 ]
