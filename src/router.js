@@ -9,9 +9,10 @@ let path = require ('path');
 
 
 // Routes
-
 router.use(cors())
 
+
+// Add user to DB and send status code
 router.post('/contact.html',validateContactSubmissions,function(request, response, next) {
   let contact = request.body;
   db.addContact({...contact});
@@ -57,16 +58,6 @@ function validateUserMiddleware(request, response, next) {
   }
 }
 
-
-
-// Add user to DB and send status code
-
-
-
-
-
-
-
 function validateContactSubmissions(request, response, next) {
   let contact = request.body;
   let errors = [];
@@ -90,10 +81,5 @@ function validateContactSubmissions(request, response, next) {
   }
   next();
 }
-
-/*module.exports = {
-  post: postLoginRoute,
-};*/
-
 
 module.exports = router;
