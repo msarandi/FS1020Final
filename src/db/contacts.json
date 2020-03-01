@@ -37,21 +37,21 @@
   {
     "firstName": "Marie",
     "lastName": "Sarandi",
-    "email": "mariesarandi@gmail.com"
+    "email": "marie.s@mail.com"
   },
   {
     "firstName": "Marie",
     "lastName": "Sarandi",
-    "email": "marie@test.com"
+    "email": "m@gmail.com"
   },
   {
-    "firstName": "Marie",
-    "lastName": "Sarandi",
-    "email": "marie@gmail.com"
+    "firstName": "m",
+    "lastName": "s",
+    "email": "test@mail.com"
   },
   {
-    "firstName": "Marie",
-    "lastName": "Sarandi",
-    "email": "marie@mail.com"
+    "firstName": "m",
+    "lastName": "m",
+    "email": "test@mail.com"
   }
 ]
